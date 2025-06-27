@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" id="element">
+        <button class="btn">Add</button>
+        <p class="result"></p><br>
+        <script>
+        let input = document.querySelector('#element')
+        let btn = document.querySelector('.btn')
+        let result = document.querySelector('.result')
+        let arr = []
+
+        function handleAdd() {
+            let value = input.value
+            arr.push(value)
+            console.log(arr);
+            
+            let html = ''
+            for(let i = 0; i < arr.length; i++) {
+                html+= `Element ${i}  là :  ${arr[i]} <br>`
+            }
+
+            result.innerHTML = html
+            input.focus()
+            input.value = ''
+            
+        }
+
+        btn.addEventListener('click',handleAdd)
+    </script>
+    </body>
+</html>
